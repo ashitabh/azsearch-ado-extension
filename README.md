@@ -2,6 +2,9 @@
 
 ![Azure Cognitive Search Extension Banner](https://user-images.githubusercontent.com/4800035/78379034-b3953d80-75c9-11ea-940d-3b64ac3d4c60.png "Azure Cognitive Search Extension Banner")
 # Azure Cognitive Search Extension for Azure Pipelines
+Fork of https://github.com/joalmeid/azsearch-ado-extension
+
+I raised a defect against source repo to fix issues with URL in index service and missing skillset code. But it seems Joao has not responded to any mails and PRs so far , so doing this fork for an urgent need in my project 
 
 This extension allows you to include [**Azure Cognitive Search**](https://docs.microsoft.com/en-us/azure/search/) operations within your DevOps practices - specifically, in your CICD pipelines. Currently the extension includes all main operations around the main Azure Search concepts like **Data Source**, **Index** and **Indexer**.
 It doesn't matter if you're more experienced with Azure Pipelines with the **YAML pipelines** or **Classic Editor**.

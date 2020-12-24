@@ -1,6 +1,6 @@
 ###################################################
 #
-# Azure Search Extension for Azure Pipelines
+# Azure Search Extension for Azure Pipelines - V2
 # (Azure Pipelines) CI
 #
 ###################################################
@@ -17,9 +17,9 @@ name: $(Date:yyyyMMdd)$(Rev:.r)
 
 variables:
   agentPool: 'ubuntu-latest'
-  projName: azsearch-ado-extension
+  projName: azsearch-ado-extension-V2
   artifactName: $(projName)-ext
-  publisherId: joalmeid
+  publisherId: ashitabh
   vsMarketplaceServiceConnetion: vs-marketplace
 
 stages:
@@ -59,7 +59,7 @@ stages:
               marketplaceServiceConnection: $(vsMarketplaceServiceConnetion)
               artifactName: $(artifactName)
               extensionName: 'Azure Search Extension (dev)'
-              extensionVisibility: private
+              extensionVisibility: public
               extensionTag: -dev
           - task: ShareAzureDevOpsExtension@2
             displayName: 'Share Extension'

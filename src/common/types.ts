@@ -1,7 +1,7 @@
 import { AzureServiceClient } from 'ms-rest-azure';
 
-export const AZSEARCH_DATAAPI_VERSION: string = '2019-05-06';
-export const AZSEARCH_MGMTAPI_VERSION: string = '2019-10-01-Preview';
+export const AZSEARCH_DATAAPI_VERSION: string = '2020-06-30';
+export const AZSEARCH_MGMTAPI_VERSION: string = '2020-08-01';
 
 export interface AzureSearchOptions {
   subscriptionId: string;
@@ -23,6 +23,10 @@ export interface IndexerOptions extends AzureSearchOptions {
 
 export interface DocumentOptions extends AzureSearchOptions {
   indexName: string;
+}
+
+export interface SkillsetOptions extends AzureSearchOptions {
+  skillsetName: string;
 }
 
 export interface SynonymMapOptions extends AzureSearchOptions {

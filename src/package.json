@@ -1,8 +1,8 @@
 {
-  "name": "azsearch-ado-extension",
+  "name": "azsearch-ado-extension-V2",
   "private": true,
-  "version": "0.0.1",
-  "description": "Azure Search extension for Azure DevOps",
+  "version": "0.2.0",
+  "description": "Azure Search extension for Azure DevOps - V2",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -12,9 +12,9 @@
     "initdev": "npm run initdev:npm",
     "initdev:npm": "npm run initdev:npm:base && npm run initdev:npm:common && npm run initdev:npm:tasks",
     "initdev:npm:base": "npm install --no-progress --no-update-notifier",
-    "initdev:npm:tasks": "glob-exec --parallel --foreach \"azsearch*task/*/tsconfig.json\" -- \"cd {{file.dir}} && npm install --no-progress --no-update-notifier\"",
+    "initdev:npm:tasks": "glob-exec --parallel --foreach \"azsearch*V2/*/tsconfig.json\" -- \"cd {{file.dir}} && npm install --no-progress --no-update-notifier\"",
     "initdev:npm:common": "glob-exec --foreach \"common/**/tsconfig.json\" -- \"cd {{file.dir}} && npm install  --no-progress --no-update-notifier\"",
-    "compile:tasks": "glob-exec --parallel --foreach \"azsearch*task/*/tsconfig.json\" -- \"tsc -p {{file.dir}} --listEmittedFiles\"",
+    "compile:tasks": "glob-exec --parallel --foreach \"azsearch*V2/*/tsconfig.json\" -- \"tsc -p {{file.dir}} --listEmittedFiles\"",
     "postcompile:tasks": "npm run lint:tasks",
     "lint:tasks": "npx eslint . --ext .ts -c ./.eslintrc",
     "prettier-format": "prettier --config .prettierrc '**/*.ts' --write",
@@ -54,5 +54,8 @@
     "typescript": "^3.8.3",
     "typestrict": "^1.0.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "azure-pipelines-task-lib": "^2.12.0",
+    "ms-rest-azure": "^3.0.0"
+  }
 }
