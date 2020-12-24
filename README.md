@@ -33,7 +33,7 @@ The Azure Search Extension include the following contributions:
 
 **4. Skillset Operations Task**
 
-![Skillset Operations Task](https://user-images.githubusercontent.com/4800035/80923146-95ae2a80-8d79-11ea-8611-ae7e354034bb.png)
+
 
 **5. Document Operations Task**
 
@@ -54,35 +54,50 @@ This task extension is publicly available for [free](https://marketplace.visuals
 
 - Run `npm install`
 - Run `npm run build`.
-- Leverage VSCode launch settings and test locally. A reference launch configuration follows:
+- Leverage VSCode launch settings and test locally. A reference launch.json configuration follows:
+  
   
   ```json
-   "configurations": [
-      {
-        "type": "node",
-          "request": "launch",
-          "name": "Launch Task",
-          "program": "${workspaceFolder}/azsearch-indexer-operation-task/dsoperationV1/main.js",
-          "cwd": "${workspaceRoot}/azsearch-indexer-operation-task/dsoperationV1",
-          "runtimeExecutable": null,
-          "runtimeArgs": [ "--nolazy" ],
-          "env": {
-            "INPUT_connectedServiceName":"debug",
-            "INPUT_subscriptionId":"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-            "INPUT_tenantId":"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-            "INPUT_serviceprincipalid":"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-            "INPUT_serviceprincipalkey":"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
-            "INPUT_scheme":"ServicePrincipal",
-            "INPUT_scopeLevel":"Subsciption",
-            "INPUT_resourceGroupName":"XXXX-rg",
-            "INPUT_DatasourceName":"YYYY",
-            "INPUT_AzureSearchName":"ZZZZ",
-          },
-          "sourceMaps": true,
-          "outFiles": [],
-          "stopOnEntry": false
-      },
-    ]
+  {
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+          "type": "node",
+            "request": "launch",
+            "name": "Launch Task",
+            "program": "${workspaceFolder}/azsearch-skillset-operation-task-V2/ssoperationV0/lib/azsearch-skillset-operation-task-V2/ssoperationV0/main.js",
+            "cwd": "${workspaceRoot}/azsearch-skillset-operation-task-V2/ssoperationV0/lib/azsearch-skillset-operation-task-V2/ssoperationV0",
+            "runtimeExecutable": null,
+            "runtimeArgs": [ "--nolazy" ],
+            "env": {
+              "connectedServiceName":"debug",
+              "INPUT_connectedServiceName":"debug",
+              "INPUT_subscriptionId":"xxxxxxxxxxxxxxxxxxxxxxx",
+              "INPUT_AzureCognitiveSearch":"xxxxxxxxxxxxxx",
+              "INPUT_tenantId":"xxxxxxxxxxxxxxxxxxxxx",
+              "INPUT_serviceprincipalid":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "INPUT_serviceprincipalkey":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "INPUT_scheme":"ServicePrincipal",
+              "INPUT_scopeLevel":"Subsciption",
+              "INPUT_resourceGroupName":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+              "INPUT_DatasourceName":"xxxxxxxxxxxx",
+              "INPUT_AzureSearchName":"xxxxxxxxxxxxxxxxxxxxxxx",
+              "INPUT_indexOperation":"CreateUpdateIndex",
+              "INPUT_SkillsetOperation":"AddUpdateDeleteSkillset",
+              "INPUT_jsonPayloadLocation":"filePath",
+              "INPUT_jsonPayloadPath":"C:/xxxxx/code/Azure-search-config/myskillset.json",
+              "INPUT_indexName":"myindex",
+              "INPUT_skillsetname":"myskillset"
+            },
+            "sourceMaps": true,
+            "outFiles": [],
+            "stopOnEntry": false
+        },
+      ]
+}
   ```
 
 ## Tests
